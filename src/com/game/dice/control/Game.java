@@ -110,6 +110,14 @@ public class Game extends Observable {
 		this.entitymanger = entitymanger;
 	}
 
+	public Game(EntityManger instance) {
+		this.round=0;
+		this.dice1=new Dice();
+		this.dice2=new Dice();
+		this.score=0;
+		this.entitymanger=instance;
+	}
+
 	public void init(String pseudoJoueur) {
 		this.round = 0;
 		this.score = 0;

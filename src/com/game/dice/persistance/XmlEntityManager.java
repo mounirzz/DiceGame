@@ -8,6 +8,8 @@ import java.io.FileOutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.game.dice.utils.NbrTours;
+
 public class XmlEntityManager implements EntityManger {
 
 	static XmlEntityManager xmlentityManager;
@@ -33,9 +35,10 @@ public class XmlEntityManager implements EntityManger {
 				System.out.println("Fichier XML inexistant !");
 				return null;
 		}
-		//if (map != null && map.containsKey(String.valueOf(NbrTours.))) {
-		//}
-		return null ;
+		if (map != null && map.containsKey(String.valueOf(NbrTours.NOMBRE_MAX_TOURS))) 
+			return map.get(String.valueOf(NbrTours.NOMBRE_MAX_TOURS));
+			else 
+				return null;
 	}
 
 	@SuppressWarnings("unchecked")
@@ -58,7 +61,7 @@ public class XmlEntityManager implements EntityManger {
 		Map<String, String> valeur = new HashMap<String,String>();
 		valeur.put("score", String.valueOf(score));
 		valeur.put("pseudo", pseudo);
-		// map.put(String.valueOf(NbrTours.NOMBRE_MAX_TOURS), (HashMap<String, String>) valeur );
+		map.put(String.valueOf(NbrTours.NOMBRE_MAX_TOURS), (HashMap<String, String>) valeur );
 		// ouverture de l'encodeur vers le fichier 
 		XMLEncoder encoder ;
 		try {

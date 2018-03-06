@@ -17,7 +17,7 @@ public class Factory {
 	EntityManger createEntityManager(int db) {
 		switch (db) {
 		case 1:
-		//	return MySqlEntityManager.getInstance();
+		return MySqlEntityManager.getInstance();
 		case 2:
 			return XmlEntityManager.getInstance();
 			default:
