@@ -25,9 +25,6 @@ public class Game extends Observable {
 	private Dice dice2;
 	private EntityManger entitymanger;
 
-	public int getId() {
-		return id;
-	}
 
 	public Result play(String playerName) {
 		Integer arg = null;
@@ -38,6 +35,7 @@ public class Game extends Observable {
 		this.dice2.roll();
 
 		// si la somme des dés est égale à 7 on incrémente le score de 10 points
+		//
 		if (dice1.getState() + dice2.getState() == 7) {
 			this.score = this.score + 10;
 		}
@@ -54,7 +52,9 @@ public class Game extends Observable {
 	public int getRound() {
 		return round;
 	}
-
+	public int getId() {
+		return id;
+	}
 	public void setRound(int round) {
 		this.round = round;
 	}

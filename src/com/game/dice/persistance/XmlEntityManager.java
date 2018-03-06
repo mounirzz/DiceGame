@@ -40,12 +40,10 @@ public class XmlEntityManager implements EntityManger {
 			else 
 				return null;
 	}
-
 	@SuppressWarnings("unchecked")
 	public void save(int score, String pseudo) {
 		Map<String, HashMap<String, String>> map = new HashMap<String, HashMap<String,String>>();
 		XMLDecoder decoder;
-		
 		try {
 			decoder = new XMLDecoder(new FileInputStream(FILE_NAME));
 			// deserialisation de l'objet

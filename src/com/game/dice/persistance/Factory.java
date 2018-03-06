@@ -14,6 +14,7 @@ public class Factory {
 			return null;
 		}
 	}
+	
 	EntityManger createEntityManager(int db) {
 		switch (db) {
 		case 1:
